@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김영원 | Cloud / Infra Engineer</title><!-- TODO: 이름 수정 -->
+  <meta name="description" content="클라우드·인프라 엔지니어 포트폴리오" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== 헤더 / 네비게이션 ===== -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#home" class="nav__brand">YW.</a><!-- TODO: 이니셜 -->
+      <ul class="nav__menu">
+        <li><a href="#about">Introduction</a></li>
+        <li><a href="#skills">SkillSet</a></li>
+        <li><a href="#projects">Portfolio</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#cert">Certification</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+      <img src="assets/profile.jpg" alt="프로필 사진" class="hero__photo" /><!-- TODO: 사진 -->
+      <h1 class="hero__name">김영원</h1><!-- TODO: 이름 -->
+      <p class="hero__role">Cloud / Infra Engineer</p>
+      <p class="hero__tagline">
+        온프레미스부터 AWS 클라우드까지, 인프라를 코드로 설계하고 운영합니다.
+      </p>
+      <div class="hero__links">
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a><!-- TODO: GitHub URL -->
+        <a href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <!-- ===== INTRODUCTION ===== -->
+    <section id="about" class="section">
+      <h2 class="section__title">Introduction</h2>
+      <p class="lead">
+        클라우드 인프라 설계와 자동화에 관심이 많은 엔지니어입니다.
+        VMware 기반 온프레미스 환경을 AWS ECS Fargate로 마이그레이션하는
+        프로젝트에서 CI/CD 파이프라인과 IAM 보안 설계를 담당했습니다.
+      </p>
+
+      <h3 class="sub__title">Experience</h3>
+      <ul class="timeline">
+        <li>
+          <span class="timeline__date">2026</span><!-- TODO: 기간 -->
+          <div>
+            <strong>AWS Cloud School</strong>
+            <p>클라우드 아키텍처, Linux, 네트워크, 쿠버네티스, Terraform 교육 수료</p>
+          </div>
+        </li>
+        <li>
+          <span class="timeline__date">2026</span>
+          <div>
+            <strong>팀 프로젝트 — 어반워크 (Farmily)</strong>
+            <p>인프라·CI/CD 담당. AWS 마이그레이션 설계 및 구축</p>
+          </div>
+        </li>
+        <!-- TODO: 인턴/해커톤 등 추가 -->
+      </ul>
+    </section>
+
+    <!-- ===== SKILLSET ===== -->
+    <section id="skills" class="section section--alt">
+      <h2 class="section__title">SkillSet</h2>
+      <div class="skills">
+        <div class="skills__group">
+          <h3>Cloud / Infra</h3>
+          <ul>
+            <li>AWS (EC2, VPC, ELB, ECS, EKS, S3, RDS, Lambda, Bedrock)</li>
+            <li>Docker / Docker Compose / Swarm</li>
+            <li>Kubernetes (EKS)</li>
+            <li>Terraform (IaC)</li>
+            <li>CI/CD — GitHub Actions</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3>Network</h3>
+          <ul>
+            <li>서브넷팅 / VLAN / VPN</li>
+            <li>라우팅 / DHCP / DNS</li>
+            <li>VyOS, AWS VPC, ALB/NLB</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3>Language / Backend</h3>
+          <ul>
+            <li>Python, Bash/Shell Script</li>
+            <li>Flask / FastAPI</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3>Database / Tools</h3>
+          <ul>
+            <li>Amazon RDS (MySQL, PostgreSQL), ElastiCache</li>
+            <li>Linux (KVM, NFS/FTP, SSH)</li>
+            <li>Git / GitHub, Notion, Obsidian</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="projects" class="section">
+      <h2 class="section__title">Portfolio</h2>
+
+      <article class="project">
+        <img src="assets/project-farmily.png" alt="Farmily 아키텍처" class="project__img" /><!-- TODO -->
+        <div class="project__body">
+          <h3>Farmily — VMware → AWS ECS 마이그레이션</h3>
+          <p class="project__meta">팀 프로젝트 · 인프라/CI/CD 담당 · 2026</p>
+          <p>
+            VMware 3-tier 온프레미스를 AWS ECS Fargate로 마이그레이션.
+            GitHub OIDC 기반 IAM Role로 키 없는 CI/CD 파이프라인을 구축하고,
+            ECR Lifecycle Policy·SonarCloud 정적분석·Circuit Breaker 자동 롤백을 적용.
+          </p>
+          <ul class="project__tags">
+            <li>ECS Fargate</li><li>Terraform</li><li>GitHub Actions</li>
+            <li>OIDC/IAM</li><li>RDS</li><li>CloudWatch</li>
+          </ul>
+          <a class="project__link" href="https://github.com/" target="_blank" rel="noopener">GitHub →</a><!-- TODO -->
+        </div>
+      </article>
+
+      <!-- TODO: 프로젝트 복제해서 추가 -->
+      <article class="project">
+        <img src="assets/project-2.png" alt="프로젝트 2" class="project__img" />
+        <div class="project__body">
+          <h3>프로젝트 제목</h3>
+          <p class="project__meta">분류 · 역할 · 기간</p>
+          <p>프로젝트 설명. 어떤 문제를 어떤 기술로 해결했는지, 결과는 무엇인지.</p>
+          <ul class="project__tags"><li>Tech</li><li>Tech</li></ul>
+          <a class="project__link" href="#" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== AWARDS ===== -->
+    <section id="awards" class="section section--alt">
+      <h2 class="section__title">Awards</h2>
+      <ul class="list">
+        <li><strong>수상명</strong> — 주최 / 연도 <!-- TODO --></li>
+      </ul>
+    </section>
+
+    <!-- ===== CERTIFICATION ===== -->
+    <section id="cert" class="section">
+      <h2 class="section__title">Certification</h2>
+      <ul class="list">
+        <li><strong>자격증명</strong> — 발급기관 / 취득일 <!-- TODO: AWS SAA 등 --></li>
+      </ul>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section section--alt">
+      <h2 class="section__title">Contact</h2>
+      <ul class="contact">
+        <li>Email — <a href="mailto:lhj990118@gmail.com">lhj990118@gmail.com</a></li>
+        <li>GitHub — <a href="https://github.com/" target="_blank" rel="noopener">github.com/</a></li><!-- TODO -->
+        <!-- TODO: 블로그/LinkedIn 등 -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 김영원. Built with HTML/CSS · Hosted on GitHub Pages.</p><!-- TODO -->
+  </footer>
+
+</body>
+</html>
