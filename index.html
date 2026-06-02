@@ -142,15 +142,39 @@
           </div>
         </article>
 
-        <!-- TODO: 프로젝트 복제해서 추가 -->
         <article class="project">
-          <div class="project__img"><img src="assets/project-2.png" alt="프로젝트 2" /></div>
+          <div class="project__img"><img src="assets/project-galaga.png" alt="Galaga K8s 3-tier" /></div><!-- TODO -->
           <div class="project__body">
-            <h3>프로젝트 제목</h3>
-            <p class="project__meta">분류 · 역할 · 기간</p>
-            <p>프로젝트 설명. 어떤 문제를 어떤 기술로 해결했는지, 결과는 무엇인지.</p>
-            <div class="chips chips--sm"><span>Tech</span><span>Tech</span></div>
-            <a class="project__link" href="#" target="_blank" rel="noopener">GitHub →</a>
+            <h3>Galaga Game — EC2 자체구축 K8s 3-tier 배포</h3>
+            <p class="project__meta">토이 프로젝트 · AWS Cloud School · 2025</p>
+            <p>
+              브라우저 갈라가 게임을 AWS EC2 위에 직접 구축한 Kubernetes 클러스터(HA Master 3 + Worker 2,
+              Calico CNI)에 3-tier로 배포. Nginx Ingress로 REST·WebSocket 라우팅, ECR 이미지 배포,
+              RDS MySQL 연동. Self-managed K8s의 한계를 분석해 EKS·Multi-AZ·RDS 이중화 개선안 도출.
+            </p>
+            <div class="chips chips--sm">
+              <span>Kubernetes</span><span>EC2</span><span>Nginx Ingress</span>
+              <span>ECR</span><span>RDS</span><span>Calico</span><span>ALB</span>
+            </div>
+            <a class="project__link" href="https://github.com/gimyw" target="_blank" rel="noopener">GitHub →</a><!-- TODO: repo URL -->
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__img"><img src="assets/project-coldstart.png" alt="Docker Cold Start DR" /></div><!-- TODO -->
+          <div class="project__body">
+            <h3>Docker Cold Start 기반 DR 검증 & imgadvisor</h3>
+            <p class="project__meta">토이 프로젝트 · AWS Cloud School · 2025</p>
+            <p>
+              Docker 이미지의 Cold Start 시간(Pull·Extract·Ready)을 측정해 RTO 달성 여부를 검증하는
+              스크립트를 작성. "이미지 크기 최적화만으로는 부족하고 앱 기동 시간이 핵심"이라는 인사이트 도출.
+              Dockerfile 정적 분석 도구 <strong>imgadvisor CLI</strong>로 최적화 권장사항 제공.
+            </p>
+            <div class="chips chips--sm">
+              <span>Docker</span><span>Bash</span><span>RTO/DR</span>
+              <span>이미지 최적화</span><span>CLI</span>
+            </div>
+            <a class="project__link" href="https://github.com/gimyw" target="_blank" rel="noopener">GitHub →</a><!-- TODO: repo URL -->
           </div>
         </article>
       </div>
