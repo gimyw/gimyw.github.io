@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>김영원 | Cloud / Infra Engineer</title><!-- TODO: 이름 수정 -->
-  <meta name="description" content="클라우드·인프라 엔지니어 포트폴리오" />
+  <title>김영원 | Cloud / Infra Engineer</title>
+  <meta name="description" content="클라우드·인프라 엔지니어 김영원 포트폴리오" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,7 +15,7 @@
   <!-- ===== 헤더 / 네비게이션 ===== -->
   <header class="site-header">
     <nav class="nav">
-      <a href="#home" class="nav__brand">YW.</a><!-- TODO: 이니셜 -->
+      <a href="#home" class="nav__brand">YW<span>.</span></a>
       <ul class="nav__menu">
         <li><a href="#about">Introduction</a></li>
         <li><a href="#skills">SkillSet</a></li>
@@ -27,152 +30,203 @@
   <main>
     <!-- ===== HERO ===== -->
     <section id="home" class="hero">
-      <img src="assets/profile.jpg" alt="프로필 사진" class="hero__photo" /><!-- TODO: 사진 -->
-      <h1 class="hero__name">김영원</h1><!-- TODO: 이름 -->
-      <p class="hero__role">Cloud / Infra Engineer</p>
-      <p class="hero__tagline">
-        온프레미스부터 AWS 클라우드까지, 인프라를 코드로 설계하고 운영합니다.
-      </p>
-      <div class="hero__links">
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a><!-- TODO: GitHub URL -->
-        <a href="#contact">Contact</a>
+      <div class="hero__inner">
+        <img src="assets/profile.jpg" alt="김영원 프로필" class="hero__photo" /><!-- TODO: assets/profile.jpg -->
+        <p class="hero__hi">Hello, I'm</p>
+        <h1 class="hero__name">김영원</h1>
+        <p class="hero__role">Cloud / Infra Engineer</p>
+        <p class="hero__tagline">
+          온프레미스부터 AWS 클라우드까지,<br />인프라를 코드로 설계하고 운영합니다.
+        </p>
+        <div class="hero__links">
+          <a class="btn btn--primary" href="#projects">Portfolio 보기</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
       </div>
     </section>
 
     <!-- ===== INTRODUCTION ===== -->
     <section id="about" class="section">
-      <h2 class="section__title">Introduction</h2>
-      <p class="lead">
-        클라우드 인프라 설계와 자동화에 관심이 많은 엔지니어입니다.
-        VMware 기반 온프레미스 환경을 AWS ECS Fargate로 마이그레이션하는
-        프로젝트에서 CI/CD 파이프라인과 IAM 보안 설계를 담당했습니다.
-      </p>
+      <div class="section__inner">
+        <span class="section__eyebrow">01</span>
+        <h2 class="section__title">Introduction</h2>
+        <p class="lead">
+          클라우드 인프라 설계와 자동화에 관심이 많은 엔지니어입니다.
+          VMware 기반 온프레미스 환경을 AWS ECS Fargate로 마이그레이션하는
+          프로젝트에서 CI/CD 파이프라인과 IAM 보안 설계를 담당했습니다.
+          "왜 이 기술을 선택했는가"를 문서로 남기는 습관을 중요하게 생각합니다.
+        </p>
 
-      <h3 class="sub__title">Experience</h3>
-      <ul class="timeline">
-        <li>
-          <span class="timeline__date">2026</span><!-- TODO: 기간 -->
-          <div>
-            <strong>AWS Cloud School</strong>
-            <p>클라우드 아키텍처, Linux, 네트워크, 쿠버네티스, Terraform 교육 수료</p>
-          </div>
-        </li>
-        <li>
-          <span class="timeline__date">2026</span>
-          <div>
-            <strong>팀 프로젝트 — 어반워크 (Farmily)</strong>
-            <p>인프라·CI/CD 담당. AWS 마이그레이션 설계 및 구축</p>
-          </div>
-        </li>
-        <!-- TODO: 인턴/해커톤 등 추가 -->
-      </ul>
+        <h3 class="sub__title">Experience</h3>
+        <ul class="timeline">
+          <li>
+            <span class="timeline__date">2026</span><!-- TODO: 기간 -->
+            <div class="timeline__body">
+              <strong>AWS Cloud School</strong>
+              <p>클라우드 아키텍처, Linux, 네트워크, 쿠버네티스, Terraform 교육 수료</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline__date">2026</span>
+            <div class="timeline__body">
+              <strong>팀 프로젝트 — 어반워크 (Farmily)</strong>
+              <p>인프라·CI/CD 담당. AWS 마이그레이션 설계 및 구축</p>
+            </div>
+          </li>
+          <!-- TODO: 인턴/해커톤 등 추가 -->
+        </ul>
+      </div>
     </section>
 
     <!-- ===== SKILLSET ===== -->
     <section id="skills" class="section section--alt">
-      <h2 class="section__title">SkillSet</h2>
-      <div class="skills">
-        <div class="skills__group">
-          <h3>Cloud / Infra</h3>
-          <ul>
-            <li>AWS (EC2, VPC, ELB, ECS, EKS, S3, RDS, Lambda, Bedrock)</li>
-            <li>Docker / Docker Compose / Swarm</li>
-            <li>Kubernetes (EKS)</li>
-            <li>Terraform (IaC)</li>
-            <li>CI/CD — GitHub Actions</li>
-          </ul>
-        </div>
-        <div class="skills__group">
-          <h3>Network</h3>
-          <ul>
-            <li>서브넷팅 / VLAN / VPN</li>
-            <li>라우팅 / DHCP / DNS</li>
-            <li>VyOS, AWS VPC, ALB/NLB</li>
-          </ul>
-        </div>
-        <div class="skills__group">
-          <h3>Language / Backend</h3>
-          <ul>
-            <li>Python, Bash/Shell Script</li>
-            <li>Flask / FastAPI</li>
-            <li>HTML / CSS</li>
-          </ul>
-        </div>
-        <div class="skills__group">
-          <h3>Database / Tools</h3>
-          <ul>
-            <li>Amazon RDS (MySQL, PostgreSQL), ElastiCache</li>
-            <li>Linux (KVM, NFS/FTP, SSH)</li>
-            <li>Git / GitHub, Notion, Obsidian</li>
-          </ul>
+      <div class="section__inner">
+        <span class="section__eyebrow">02</span>
+        <h2 class="section__title">SkillSet</h2>
+        <div class="skills">
+          <div class="skills__group">
+            <h3>☁️ Cloud / Infra</h3>
+            <div class="chips">
+              <span>AWS EC2</span><span>VPC</span><span>ELB</span><span>ECS</span>
+              <span>EKS</span><span>S3</span><span>RDS</span><span>Lambda</span>
+              <span>Bedrock</span><span>Docker</span><span>Kubernetes</span>
+              <span>Terraform</span><span>GitHub Actions</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h3>🌐 Network</h3>
+            <div class="chips">
+              <span>서브넷팅</span><span>VLAN</span><span>VPN</span><span>라우팅</span>
+              <span>DHCP</span><span>DNS</span><span>VyOS</span><span>ALB/NLB</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h3>💻 Language / Backend</h3>
+            <div class="chips">
+              <span>Python</span><span>Bash/Shell</span><span>Flask</span>
+              <span>FastAPI</span><span>HTML/CSS</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h3>🗄️ Database / Tools</h3>
+            <div class="chips">
+              <span>MySQL</span><span>PostgreSQL</span><span>ElastiCache</span>
+              <span>Linux</span><span>Git/GitHub</span><span>Notion</span><span>Obsidian</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== PORTFOLIO ===== -->
     <section id="projects" class="section">
-      <h2 class="section__title">Portfolio</h2>
+      <div class="section__inner">
+        <span class="section__eyebrow">03</span>
+        <h2 class="section__title">Portfolio</h2>
 
-      <article class="project">
-        <img src="assets/project-farmily.png" alt="Farmily 아키텍처" class="project__img" /><!-- TODO -->
-        <div class="project__body">
-          <h3>Farmily — VMware → AWS ECS 마이그레이션</h3>
-          <p class="project__meta">팀 프로젝트 · 인프라/CI/CD 담당 · 2026</p>
-          <p>
-            VMware 3-tier 온프레미스를 AWS ECS Fargate로 마이그레이션.
-            GitHub OIDC 기반 IAM Role로 키 없는 CI/CD 파이프라인을 구축하고,
-            ECR Lifecycle Policy·SonarCloud 정적분석·Circuit Breaker 자동 롤백을 적용.
-          </p>
-          <ul class="project__tags">
-            <li>ECS Fargate</li><li>Terraform</li><li>GitHub Actions</li>
-            <li>OIDC/IAM</li><li>RDS</li><li>CloudWatch</li>
-          </ul>
-          <a class="project__link" href="https://github.com/" target="_blank" rel="noopener">GitHub →</a><!-- TODO -->
-        </div>
-      </article>
+        <article class="project">
+          <div class="project__img"><img src="assets/project-farmily.png" alt="Farmily 아키텍처" /></div><!-- TODO -->
+          <div class="project__body">
+            <h3>Farmily — VMware → AWS ECS 마이그레이션</h3>
+            <p class="project__meta">팀 프로젝트 · 인프라/CI/CD 담당 · 2026</p>
+            <p>
+              VMware 3-tier 온프레미스를 AWS ECS Fargate로 마이그레이션.
+              GitHub OIDC 기반 IAM Role로 키 없는 CI/CD 파이프라인을 구축하고,
+              ECR Lifecycle Policy·SonarCloud 정적분석·Circuit Breaker 자동 롤백을 적용.
+            </p>
+            <div class="chips chips--sm">
+              <span>ECS Fargate</span><span>Terraform</span><span>GitHub Actions</span>
+              <span>OIDC/IAM</span><span>RDS</span><span>CloudWatch</span>
+            </div>
+            <a class="project__link" href="https://github.com/gimyw" target="_blank" rel="noopener">GitHub →</a><!-- TODO: repo URL -->
+          </div>
+        </article>
 
-      <!-- TODO: 프로젝트 복제해서 추가 -->
-      <article class="project">
-        <img src="assets/project-2.png" alt="프로젝트 2" class="project__img" />
-        <div class="project__body">
-          <h3>프로젝트 제목</h3>
-          <p class="project__meta">분류 · 역할 · 기간</p>
-          <p>프로젝트 설명. 어떤 문제를 어떤 기술로 해결했는지, 결과는 무엇인지.</p>
-          <ul class="project__tags"><li>Tech</li><li>Tech</li></ul>
-          <a class="project__link" href="#" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-      </article>
+        <!-- TODO: 프로젝트 복제해서 추가 -->
+        <article class="project">
+          <div class="project__img"><img src="assets/project-2.png" alt="프로젝트 2" /></div>
+          <div class="project__body">
+            <h3>프로젝트 제목</h3>
+            <p class="project__meta">분류 · 역할 · 기간</p>
+            <p>프로젝트 설명. 어떤 문제를 어떤 기술로 해결했는지, 결과는 무엇인지.</p>
+            <div class="chips chips--sm"><span>Tech</span><span>Tech</span></div>
+            <a class="project__link" href="#" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <!-- ===== AWARDS ===== -->
     <section id="awards" class="section section--alt">
-      <h2 class="section__title">Awards</h2>
-      <ul class="list">
-        <li><strong>수상명</strong> — 주최 / 연도 <!-- TODO --></li>
-      </ul>
+      <div class="section__inner">
+        <span class="section__eyebrow">04</span>
+        <h2 class="section__title">Awards</h2>
+        <div class="cards">
+          <div class="card">
+            <strong>수상명</strong><!-- TODO -->
+            <span class="card__sub">주최 / 연도</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== CERTIFICATION ===== -->
     <section id="cert" class="section">
-      <h2 class="section__title">Certification</h2>
-      <ul class="list">
-        <li><strong>자격증명</strong> — 발급기관 / 취득일 <!-- TODO: AWS SAA 등 --></li>
-      </ul>
+      <div class="section__inner">
+        <span class="section__eyebrow">05</span>
+        <h2 class="section__title">Certification</h2>
+        <div class="cards">
+          <div class="card">
+            <span class="card__badge">AWS</span>
+            <strong>AWS Certified Solutions Architect – Associate</strong>
+            <span class="card__sub">Amazon Web Services</span>
+          </div>
+          <div class="card">
+            <span class="card__badge">OS</span>
+            <strong>리눅스마스터 2급</strong>
+            <span class="card__sub">한국정보통신진흥협회(KAIT)</span>
+          </div>
+          <div class="card">
+            <span class="card__badge">NET</span>
+            <strong>네트워크관리사 2급</strong>
+            <span class="card__sub">한국정보통신자격협회(ICQA)</span>
+          </div>
+          <div class="card">
+            <span class="card__badge">OA</span>
+            <strong>컴퓨터활용능력 1급</strong>
+            <span class="card__sub">대한상공회의소</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section section--alt">
-      <h2 class="section__title">Contact</h2>
-      <ul class="contact">
-        <li>Email — <a href="mailto:lhj990118@gmail.com">lhj990118@gmail.com</a></li>
-        <li>GitHub — <a href="https://github.com/" target="_blank" rel="noopener">github.com/</a></li><!-- TODO -->
-        <!-- TODO: 블로그/LinkedIn 등 -->
-      </ul>
+      <div class="section__inner section__inner--center">
+        <span class="section__eyebrow">06</span>
+        <h2 class="section__title">Contact</h2>
+        <p class="lead lead--center">함께 일하고 싶으시다면 편하게 연락 주세요.</p>
+        <div class="contact">
+          <a class="contact__btn" href="mailto:kjk77544@naver.com">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email
+          </a>
+          <a class="contact__btn" href="https://github.com/gimyw" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            GitHub
+          </a>
+          <a class="contact__btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener"><!-- TODO: LinkedIn 주소 -->
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9Z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 김영원. Built with HTML/CSS · Hosted on GitHub Pages.</p><!-- TODO -->
+    <p>© 2026 김영원 · Cloud / Infra Engineer</p>
+    <p class="site-footer__sub">Built with HTML/CSS · Hosted on GitHub Pages</p>
   </footer>
 
 </body>
