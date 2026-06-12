@@ -125,99 +125,71 @@
         <span class="section__eyebrow">03</span>
         <h2 class="section__title">Portfolio</h2>
 
-        <article class="project">
-          <div class="project__img"><img src="assets/project-farmily.png" alt="Farmily 아키텍처" /></div><!-- TODO -->
-          <div class="project__body">
-            <h3>Farmily — 농민 AI 마케팅 자동화 플랫폼</h3>
-            <p class="project__meta">AWS Cloud School 최종 프로젝트 · 팀(어반워크) · 인프라/CI/CD 담당 · 2026</p>
-            <p>
-              농민이 영농일지를 작성하면 AWS Bedrock 에이전트(RAG)가 인스타그램·스마트스토어용
-              마케팅 콘텐츠를 자동 생성하는 AI 플랫폼. <strong>인프라·CI/CD를 담당</strong>해
-              VMware 3-tier 온프레미스를 AWS ECS Fargate로 마이그레이션하고, GitHub OIDC 기반
-              키리스 CI/CD(ECR Lifecycle·SonarCloud 정적분석·Circuit Breaker 자동 롤백)를 구축.
-            </p>
-            <div class="chips chips--sm">
-              <span>ECS Fargate</span><span>Terraform</span><span>GitHub Actions</span>
-              <span>OIDC/IAM</span><span>Bedrock</span><span>RDS</span><span>CloudWatch</span>
+        <!-- ===== Farmily 프로젝트 그룹 (인프라/CI·CD 파트) ===== -->
+        <div class="project-group">
+          <article class="project">
+            <div class="project__img"><img src="assets/project-farmily.png" alt="Farmily 아키텍처" /></div>
+            <div class="project__body">
+              <h3>AWS Cloud School 13기 최종 프로젝트 (Farmily)</h3>
+              <p class="project__meta">농민 AI 마케팅 자동화 플랫폼 · 팀(어반워크) · 인프라/CI·CD 담당 · 2026</p>
+              <p>
+                농민이 영농일지를 작성하면 AWS Bedrock 에이전트(RAG)가 인스타그램·스마트스토어용
+                마케팅 콘텐츠를 자동 생성하는 AI 플랫폼. <strong>인프라·CI/CD를 담당</strong>해
+                VMware 3-tier 온프레미스를 AWS ECS Fargate로 마이그레이션하고, GitHub OIDC 기반
+                키리스 CI/CD(ECR Lifecycle·SonarCloud 정적분석·Circuit Breaker 자동 롤백)를 구축.
+              </p>
+              <div class="chips chips--sm">
+                <span>ECS Fargate</span><span>Terraform</span><span>GitHub Actions</span>
+                <span>OIDC/IAM</span><span>Bedrock</span><span>RDS</span><span>CloudWatch</span>
+              </div>
+              <a class="project__link" href="https://github.com/gimyw" target="_blank" rel="noopener">GitHub →</a><!-- TODO: repo URL -->
             </div>
-            <a class="project__link" href="https://github.com/gimyw" target="_blank" rel="noopener">GitHub →</a><!-- TODO: repo URL -->
-          </div>
-        </article>
+          </article>
 
-        <article class="project">
-          <div class="project__img"><img src="assets/project-fis.png" alt="AWS FIS 카오스 엔지니어링" /></div>
-          <div class="project__body">
-            <h3>AWS FIS 카오스 엔지니어링 — prod RDS Failover RTO 실측</h3>
-            <p class="project__meta">Farmily · 인프라/SRE · 단독 설계·실행·분석 · 2026</p>
-            <p>
-              운영 RDS(Multi-AZ)에 <strong>AWS FIS로 강제 Failover를 주입</strong>해 가용성 가정을 실측 검증.
-              <strong>“인프라 가용성 ≠ 서비스 가용성”을 정량 입증</strong>(DB RTO 60초 vs 서비스 체감 RTO 15분, 약 15배 격차, 누적 5xx 280건).
-              Grafana·RDS 이벤트 교차검증으로 <strong>헬스체크 맹점·커넥션풀 회복 지연</strong>을 발견하고
-              deep health check·풀 튜닝 개선 로드맵을 도출. FIS 최소권한 IAM Role·Stop Condition으로 안전 장치를 건 뒤 실험.
-            </p>
-            <div class="chips chips--sm">
-              <span>AWS FIS</span><span>RDS Multi-AZ</span><span>CloudWatch</span>
-              <span>Grafana</span><span>IAM 최소권한</span><span>Chaos Engineering</span>
-            </div>
-            <a class="project__link" href="https://velog.io/@kjk77544/posts" target="_blank" rel="noopener">관련 글 →</a><!-- TODO: FIS 글 직접 링크 -->
+          <p class="subproject__label">↳ 인프라 · CI/CD 파트 주요 작업</p>
+          <div class="subprojects">
+            <article class="subproject">
+              <div class="subproject__img"><img src="assets/project-fis.png" alt="AWS FIS 카오스 엔지니어링" /></div>
+              <div class="subproject__body">
+                <h4>AWS FIS 카오스 엔지니어링</h4>
+                <p class="subproject__meta">인프라/SRE · 단독</p>
+                <p>운영 RDS Failover RTO 실측 — “인프라 가용성 ≠ 서비스 가용성”을 정량 입증(DB 1분 vs 서비스 15분, 약 15배).</p>
+                <div class="chips chips--sm"><span>AWS FIS</span><span>RDS Multi-AZ</span><span>Grafana</span></div>
+                <a class="subproject__link" href="https://velog.io/@kjk77544/posts" target="_blank" rel="noopener">관련 글 →</a>
+              </div>
+            </article>
+            <article class="subproject">
+              <div class="subproject__img"><img src="assets/project-cicd.png" alt="GitHub OIDC CI/CD" /></div>
+              <div class="subproject__body">
+                <h4>GitHub OIDC 키리스 CI/CD</h4>
+                <p class="subproject__meta">CI/CD · IAM · 단독</p>
+                <p>3-repo(ECS·S3/CloudFront·EAS) 자동배포. OIDC 키리스 + 레포별 최소권한 롤 + Circuit Breaker 자동 롤백.</p>
+                <div class="chips chips--sm"><span>GitHub Actions</span><span>OIDC/IAM</span><span>ECR·ECS</span></div>
+                <a class="subproject__link" href="https://velog.io/@kjk77544/posts" target="_blank" rel="noopener">관련 글 →</a>
+              </div>
+            </article>
+            <article class="subproject">
+              <div class="subproject__img"><img src="assets/project-monitoring.png" alt="CloudWatch Grafana 모니터링" /></div>
+              <div class="subproject__body">
+                <h4>CloudWatch + Grafana 관측성</h4>
+                <p class="subproject__meta">모니터링/관측성</p>
+                <p>Container Insights + 알람 → SNS→Slack. AMG(SSO) 대시보드로 5xx·p99·DB 연결수 실시간 시각화.</p>
+                <div class="chips chips--sm"><span>CloudWatch</span><span>Grafana</span><span>SNS·Slack</span></div>
+                <a class="subproject__link" href="https://velog.io/@kjk77544/posts" target="_blank" rel="noopener">관련 글 →</a>
+              </div>
+            </article>
+            <article class="subproject">
+              <div class="subproject__img"><img src="assets/project-waf.png" alt="Well-Architected 리뷰" /></div>
+              <div class="subproject__body">
+                <h4>Well-Architected 6-Pillar 리뷰</h4>
+                <p class="subproject__meta">SA/아키텍처</p>
+                <p>6 Pillar 성숙도 평가 + 갭 도출(시크릿·AWS WAF·알람 등) + ADR로 의사결정 근거 추적.</p>
+                <div class="chips chips--sm"><span>Well-Architected</span><span>Security</span><span>ADR</span></div>
+                <a class="subproject__link" href="https://velog.io/@kjk77544/posts" target="_blank" rel="noopener">관련 글 →</a>
+              </div>
+            </article>
           </div>
-        </article>
-
-        <article class="project">
-          <div class="project__img"><img src="assets/project-cicd.png" alt="GitHub OIDC CI/CD" /></div>
-          <div class="project__body">
-            <h3>GitHub OIDC 키리스 CI/CD — 3-repo 자동배포</h3>
-            <p class="project__meta">Farmily · CI/CD·IAM 단독 담당 · 2026</p>
-            <p>
-              Backend(ECS)·Frontend-web(S3/CloudFront)·Mobile(Expo EAS) <strong>3개 레포 파이프라인</strong>을 구축.
-              <strong>GitHub OIDC 키리스 인증 + 레포별 최소권한 IAM Role</strong>로 장수명 Access Key를 제거.
-              gradle test·SonarCloud SAST → ECR push(SHA-pinned actions, 이미지 태그 <code>{env}-{sha}</code>)
-              → <strong>ECS 자동배포 + Circuit Breaker 자동 롤백</strong>, 전 단계 Slack 알림.
-            </p>
-            <div class="chips chips--sm">
-              <span>GitHub Actions</span><span>OIDC</span><span>IAM</span><span>ECR</span>
-              <span>ECS</span><span>S3/CloudFront</span><span>SonarCloud</span>
-            </div>
-            <a class="project__link" href="https://velog.io/@kjk77544/posts" target="_blank" rel="noopener">관련 글 →</a><!-- TODO: CICD 시리즈 링크 -->
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project__img"><img src="assets/project-monitoring.png" alt="CloudWatch Grafana 모니터링" /></div>
-          <div class="project__body">
-            <h3>CloudWatch + Grafana 관측성·알람 체계</h3>
-            <p class="project__meta">Farmily · 모니터링/관측성 · 2026</p>
-            <p>
-              ECS <strong>Container Insights</strong> + CloudWatch 메트릭·알람(CPU·메모리·RDS) →
-              <strong>SNS → Slack 알림 경로</strong>(ADR-012)를 설계. <strong>Amazon Managed Grafana</strong>(IAM Identity Center SSO)
-              대시보드로 5xx·p99·DB 연결수를 시각화하고, FIS 실험 관측 대시보드를 구성해
-              장애 구간의 지표를 실시간으로 추적.
-            </p>
-            <div class="chips chips--sm">
-              <span>CloudWatch</span><span>Container Insights</span><span>Amazon Managed Grafana</span>
-              <span>SNS</span><span>IAM Identity Center</span><span>Slack</span>
-            </div>
-            <a class="project__link" href="https://velog.io/@kjk77544/posts" target="_blank" rel="noopener">관련 글 →</a><!-- TODO: 모니터링 시리즈 링크 -->
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project__img"><img src="assets/project-waf.png" alt="Well-Architected 리뷰" /></div>
-          <div class="project__body">
-            <h3>Well-Architected 6-Pillar 아키텍처 리뷰</h3>
-            <p class="project__meta">Farmily · SA/아키텍처 · 2026</p>
-            <p>
-              AWS <strong>Well-Architected Framework 6 Pillar</strong>(운영 우수성·보안·안정성·성능·비용·지속가능성) 관점으로
-              ECS 마이그레이션 아키텍처를 횡단 점검. 각 Pillar <strong>성숙도 평가 + 갭 도출</strong>(평문 시크릿→Secrets Manager,
-              AWS WAF 룰 적용, 알람 실구성 등 우선 개선항목)과 ADR로 의사결정 근거를 추적해, "왜 이 구조인가"를 SA 관점으로 해석.
-            </p>
-            <div class="chips chips--sm">
-              <span>Well-Architected</span><span>Security</span><span>Reliability</span>
-              <span>IAM</span><span>ADR</span><span>Architecture</span>
-            </div>
-            <a class="project__link" href="https://velog.io/@kjk77544/posts" target="_blank" rel="noopener">관련 글 →</a><!-- TODO: WAF 글 링크 -->
-          </div>
-        </article>
+        </div>
 
         <article class="project">
           <div class="project__img"><img src="assets/project-galaga.png" alt="Galaga K8s 3-tier" /></div><!-- TODO -->
