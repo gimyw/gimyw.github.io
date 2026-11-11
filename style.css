@@ -371,3 +371,30 @@ a { color: var(--accent); text-decoration: none; }
   .project { flex-direction: column; gap: 18px; }
   .project__img { flex-basis: auto; width: 100%; height: 180px; }
 }
+
+/* ===== 포트폴리오 v2 공용 컴포넌트 (portfolio-print.html과 동일) ===== */
+.note { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0 8px; }
+.metric { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.metric b { display: block; font-size: 1.3rem; color: var(--accent); letter-spacing: -0.03em; }
+.metric span { font-size: 0.8rem; color: var(--muted); }
+.arch { width: 100%; border: 1px solid var(--border); border-radius: 12px; margin: 16px 0 4px; }
+.project__body ul { margin: 8px 0 0 18px; font-size: 0.92rem; color: #374151; }
+/* 활동 장표: 문제 → 과정 → 결과 */
+.star { margin: 6px 0 0; font-size: 0.92rem; }
+.star p { margin: 4px 0; }
+.star b { display: inline-block; min-width: 36px; color: var(--accent); }
+.toc { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 6px 0 4px; }
+.toc th, .toc td { border-bottom: 1px solid var(--border); padding: 8px; text-align: left; vertical-align: top; }
+.toc th { color: var(--muted); font-weight: 600; }
+.links { margin: 8px 0 0 18px; font-size: 0.92rem; }
+.links a { color: var(--accent); }
+@media (max-width: 720px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .toc { font-size: 0.82rem; }
+  .toc th:nth-child(2), .toc td:nth-child(2) { display: none; }
+  .nav__menu { flex-wrap: wrap; row-gap: 6px; }
+  .hero__links { flex-wrap: wrap; justify-content: center; }
+  .intro-row { flex-direction: column; }
+  .intro-row > img { flex-basis: auto !important; width: 140px !important; }
+}

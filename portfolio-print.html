@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김영원 포트폴리오</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* PDF 출력용: style.css를 그대로 쓰고 인쇄에 필요한 것만 덮어쓴다 */
+    @page { size: A4; margin: 14mm 12mm; }
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-size: 13.5px; line-height: 1.62; }
+    .hero { padding: 14px 24px 6px; }
+    .hero__role { background: none; -webkit-text-fill-color: var(--accent); color: var(--accent); }
+    .hero::before, .hero::after { display: none; }
+    .section { padding: 34px 8px; }
+    .section__title { margin-bottom: 24px; }
+    .sub__title { margin: 24px 0 12px; }
+    .project, .subproject, .card, .timeline li, .skills__group, .project-group { box-shadow: none; }
+    .project, .subproject, .card, .timeline li, .skills__group, .metric { break-inside: avoid; }
+    .project-group { break-inside: auto; }
+    .page-break { break-before: page; }
+    .note { font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0 6px; }
+    .metric { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+    .metrics { break-inside: avoid; }
+    .metric b { display: block; font-size: 1.25rem; color: var(--accent); letter-spacing: -0.03em; }
+    .metric span { font-size: 0.78rem; color: var(--muted); }
+    .arch { break-inside: avoid; width: 100%; border: 1px solid var(--border); border-radius: 12px; margin: 14px 0 4px; }
+    .project__body ul { margin: 8px 0 0 18px; font-size: 0.9rem; color: #374151; }
+    /* 활동 장표: 문제 → 과정 → 결과 */
+    .star { margin: 6px 0 0; font-size: 0.88rem; }
+    .star p { margin: 3px 0; }
+    .star b { display: inline-block; min-width: 34px; color: var(--accent); }
+    .intro .timeline { gap: 8px; }
+    .intro .timeline li { padding-top: 8px; padding-bottom: 8px; }
+    .intro .section__title { margin-bottom: 14px; }
+    .intro .sub__title { margin: 16px 0 8px; }
+    .intro.section { padding-top: 14px; }
+    .hero__name { font-size: 2.2rem; }
+    .toc th, .toc td { padding-top: 5px; padding-bottom: 5px; }
+    .toc { break-inside: avoid; width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 6px 0 4px; }
+    .toc th, .toc td { border-bottom: 1px solid var(--border); padding: 7px 8px; text-align: left; vertical-align: top; }
+    .toc th { color: var(--muted); font-weight: 600; }
+    .links { margin: 8px 0 0 18px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="hero__hi">Portfolio</p>
+        <h1 class="hero__name">김영원</h1>
+        <p class="hero__role">Cloud / Infra Engineer (SRE 지향)</p>
+        <p class="hero__tagline">가정이 아니라 측정으로 말하는 클라우드·인프라 엔지니어</p>
+        <p class="note">경기대학교 컴퓨터공학 · 2027년 7월 졸업 예정 · AWS Cloud School 13기 수료 · 인턴 · 현장실습 · 신입 지원</p>
+        <p class="note">kjk77544@naver.com · github.com/gimyw · velog.io/@kjk77544 · linkedin.com/in/youngwon-kim-240517339</p>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <div class="section__inner">
+        <span class="section__eyebrow">01</span>
+        <h2 class="section__title">Introduction</h2>
+        <p class="lead">
+          VMware 온프레미스 3-tier를 AWS로 옮기는 팀 프로젝트에서 <strong>관측 · 보안 · CI/CD</strong>를 맡았습니다.
+          키리스 CI/CD로 배포를 자동화하고, CloudWatch·AMP·Grafana로 관측 체계를 세운 뒤,
+          운영 RDS 장애 주입 실험에서 <strong>"인프라 가용성 ≠ 서비스 가용성"</strong>(DB 복구 약 1분 vs 서비스 체감 약 15분)을 데이터로 확인했습니다.
+        </p>
+
+        <div class="metrics">
+          <div class="metric"><b>~60초 vs ~15분</b><span>DB 복구 vs 서비스 체감 복구 (FIS)</span></div>
+          <div class="metric"><b>−47%</b><span>AMP 인입비 ($600→$320/월)</span></div>
+          <div class="metric"><b>118→73</b><span>계정 전체 IAM 역할 정리</span></div>
+          <div class="metric"><b>9개</b><span>평문 시크릿 무중단 전환</span></div>
+        </div>
+
+        <h3 class="sub__title">Contents</h3>
+        <table class="toc">
+          <tr><th>활동</th><th>형태</th><th>보여주는 역량</th></tr>
+          <tr><td><strong>Farmily</strong> — 온프레미스 → AWS 마이그레이션</td><td>팀 5인</td><td>CI/CD · 관측 · 장애 원인 분석 · 보안</td></tr>
+          <tr><td><strong>Galaga</strong> — 자체 구축 K8s 3-tier</td><td>토이 프로젝트</td><td>Kubernetes 직접 구축 · 한계 분석</td></tr>
+          <tr><td><strong>imgadvisor</strong> — Docker Cold Start DR 검증</td><td>토이 프로젝트</td><td>RTO 측정 · CLI 제작</td></tr>
+          <tr><td><strong>금융한걸음</strong> — AI 코딩 하네스로 만든 MVP</td><td>팀 3인</td><td>AI 활용과 검증 설계</td></tr>
+        </table>
+
+      </div>
+    </section>
+
+
+    <section class="section page-break">
+      <div class="section__inner">
+        <span class="section__eyebrow">02</span>
+        <h2 class="section__title">Farmily — 클라우드 마이그레이션</h2>
+        <div style="display:flex; gap:18px; align-items:flex-start;">
+        <img src="assets/farmily-app-onboarding.png" alt="Farmily 앱 온보딩 화면" style="flex:0 0 150px; width:150px; border:1px solid var(--border); border-radius:10px;" />
+        <div>
+        <p class="lead">
+          농민이 자기 농장 이야기를 소비자에게 전달하는 AI 브랜딩 플랫폼. VMware 온프레미스 3-tier를
+          ECS Fargate로 먼저 이전한 뒤 EKS + GitOps로 모더나이즈했습니다(Backend는 EKS로 일원화, AI 오케스트레이터는 ECS에 공존).
+        </p>
+        <p class="star"><b>문제</b> 온프레미스는 수동 배포에 단일 장애점이 있었고, 장애를 볼 관측 수단이 없었습니다.</p>
+        <p class="project__meta">AWS Cloud School 13기 최종 프로젝트 · 팀 5인 · 역할: 관측 · 보안 · CI/CD · 2026.05 ~</p>
+        </div>
+        </div>
+        <img class="arch" src="assets/farmily-prod-arch.png" alt="Farmily prod 전체 아키텍처" />
+
+
+        <p class="subproject__label page-break">↳ 내가 맡은 작업</p>
+        <div class="subprojects">
+          <article class="subproject">
+            <div class="subproject__img"><img src="assets/project-cicd.png" alt="CI/CD" /></div>
+            <div class="subproject__body">
+              <h4>키리스 CI/CD + build-once 승격</h4>
+              <p class="subproject__meta">CI/CD · IAM</p>
+              <div class="star">
+                <p><b>문제</b> 장기 액세스키가 유출될 수 있었고, dev와 prod에 서로 다른 이미지가 배포될 위험이 있었습니다.</p>
+                <p><b>과정</b> GitHub Actions <strong>OIDC 키리스</strong> 인증으로 액세스키를 없앴습니다. dev에서 검증한 이미지는 <strong>crane copy로 같은 digest 그대로</strong> prod에 승격했습니다.</p>
+                <p><b>결과</b> dev는 자동 배포, prod는 PR 머지 게이트를 거칩니다. prod에는 dev에서 검증한 이미지만 올라갑니다.</p>
+              </div>
+              <div class="chips chips--sm"><span>GitHub Actions</span><span>OIDC</span><span>ArgoCD</span><span>Jenkins</span></div>
+            </div>
+          </article>
+          <article class="subproject">
+            <div class="subproject__img"><img src="assets/project-amp.png" alt="AMP 관측" /></div>
+            <div class="subproject__body">
+              <h4>관측 체계 + 비용 최적화</h4>
+              <p class="subproject__meta">Observability · FinOps</p>
+              <div class="star">
+                <p><b>문제</b> EKS 전환 후 지표가 너무 많이 들어와 AMP 인입비가 월 $600까지 올랐습니다.</p>
+                <p><b>과정</b> CloudWatch Container Insights와 Prometheus → <strong>AMP remote-write(IRSA SigV4)</strong>를 구성하고 <strong>22패널 운영 대시보드</strong>를 설계했습니다. 아무도 보지 않는 지표는 drop 룰 6개로 걸렀습니다.</p>
+                <p><b>결과</b> 활성 시계열 163,440 → 약 86,700, AMP 인입비 $600 → $320/월(<strong>−47%</strong>).</p>
+              </div>
+              <div class="chips chips--sm"><span>AMP</span><span>Grafana</span><span>CloudWatch</span><span>IRSA</span></div>
+            </div>
+          </article>
+          <article class="subproject">
+            <div class="subproject__img"><img src="assets/project-fis.png" alt="FIS 카오스 실험" /></div>
+            <div class="subproject__body">
+              <h4>FIS 장애 주입 관측 · 원인 분석</h4>
+              <p class="subproject__meta">SRE · 관측 · RCA</p>
+              <div class="star">
+                <p><b>문제</b> "Multi-AZ니까 알아서 복구된다"는 가정이 검증된 적 없었습니다.</p>
+                <p><b>과정</b> 운영 RDS Multi-AZ Failover 실험을 Grafana · RDS 이벤트 · AWS CLI로 교차검증했습니다.</p>
+                <p><b>결과</b> DB는 <strong>~60초</strong>에 복구됐지만 서비스는 <strong>~15분</strong> 끊겼습니다(5xx 280건, p99 31초). 장애 내내 ALB는 Healthy=1이었고(헬스체크 맹점), 원인은 커넥션풀 회복 지연이었습니다.</p>
+                <p><b>다음</b> 개선안(deep health check · 풀 튜닝)은 도출했지만 적용 후 재실험은 하지 못했습니다. 같은 실험으로 다시 재는 것이 다음 단계입니다.</p>
+              </div>
+              <div class="chips chips--sm"><span>AWS FIS</span><span>Grafana</span><span>k6</span></div>
+            </div>
+          </article>
+          <article class="subproject">
+            <div class="subproject__body">
+              <h4>보안 · IAM · 시크릿</h4>
+              <p class="subproject__meta">Security</p>
+              <div class="star">
+                <p><b>문제</b> 계정에 쓰지 않는 IAM 역할이 쌓여 있었고, 비밀값이 평문 환경변수로 들어가 있었습니다.</p>
+                <p><b>과정</b> 미사용 역할 45개를 last-used로 확인한 뒤 백업하고 삭제했습니다. CI/CD 역할 7개는 레포별 최소 권한으로 두었습니다. WAF는 Count→Block 순서로 롤아웃했습니다.</p>
+                <p><b>결과</b> 계정 전체 IAM 역할 <strong>118→73개</strong>. 평문 환경변수 <strong>9개</strong>를 Secrets Manager로 옮겼고, 배포 중 키 누락이 있었지만 Circuit Breaker 덕분에 무중단으로 전환했습니다.</p>
+              </div>
+              <div class="chips chips--sm"><span>IAM</span><span>WAF</span><span>Secrets Manager</span></div>
+            </div>
+          </article>
+          <article class="subproject">
+            <div class="subproject__body">
+              <h4>트러블슈팅 — CI 빌드 무한 flapping</h4>
+              <p class="subproject__meta">CI/CD · RCA</p>
+              <div class="star">
+                <p><b>문제</b> Jenkins Terraform 에이전트 빌드가 실패와 재시작을 끝없이 반복했습니다.</p>
+                <p><b>과정</b> 처음 세운 OOM 가설은 실측(메모리 2.4GB 여유, load 0)으로 기각했습니다. 원인은 runc exec 버그로 특정했습니다.</p>
+                <p><b>결과</b> 빌드 에이전트는 EKS 파드로 옮기고 컨트롤러는 EC2에 남겼습니다. CI 두뇌는 자기가 배포하는 클러스터 밖에 둡니다.</p>
+              </div>
+              <div class="chips chips--sm"><span>Jenkins</span><span>EKS</span><span>runc</span></div>
+            </div>
+          </article>
+        </div>
+        <p class="note">Terraform 코드화(prod/dev 66/63 리소스)·DMS 이관·DR 구축·FIS 실험 실행은 팀원 담당입니다. 저는 콘솔 드리프트 전수조사와 import 절차 수립으로 <code>plan</code> 무변경을 검증하는 부분을 맡았습니다. 통합 아카이브 github.com/gimyw/farmily-archive (5개 레포 히스토리 보존)</p>
+      </div>
+    </section>
+
+    <section class="section page-break">
+      <div class="section__inner">
+        <span class="section__eyebrow">03</span>
+        <h2 class="section__title">Other Projects</h2>
+
+        <article class="project">
+          <div class="project__body">
+            <h3>금융한걸음 — 고령자 모바일뱅킹 학습 서비스</h3>
+            <p class="project__meta">Vibe Coding 특강 팀 프로젝트 · 3인 · 화면(screen/) 담당 · 2026.08</p>
+            <p>가짜 은행 화면에서 고령자가 송금을 처음부터 끝까지 연습하는 웹 서비스입니다. "AI가 대신 해주지 않고, 스스로 할 수 있게 가르친다"를 기능 판정 기준으로 삼았습니다.</p>
+            <div class="star">
+              <p><b>문제</b> 3인이 하루 안에 AI 코딩 도구로 MVP를 만들면서, AI가 만든 코드의 품질을 보장해야 했습니다.</p>
+            </div>
+            <ul>
+              <li>SPEC → plan → tasks 순서로 문서를 먼저 확정하고, 기능 후보 15개를 MoSCoW로 팀이 직접 등급 배정</li>
+              <li>폴더 단위 소유권 + 권한 규칙 + 훅으로 하네스를 구성해 3인이 병렬 개발</li>
+              <li><strong>AI 출력 검증:</strong> PostToolUse 문법 검사 훅, 수정 도구가 없는 읽기 전용 코드 리뷰 서브에이전트 설계</li>
+              <li>API 키는 저장소 밖에 두고, LLM이 실패해도 준비된 답변으로 동작하는 폴백 설계</li>
+            </ul>
+            <div class="chips chips--sm"><span>Claude Code</span><span>Vanilla JS</span><span>Hooks</span><span>Subagent</span></div>
+            <a class="project__link" href="https://github.com/gimyw/bank_simulator">github.com/gimyw/bank_simulator</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__body">
+            <h3>Galaga Game — EC2 자체 구축 K8s 3-tier 배포</h3>
+            <p class="project__meta">AWS Cloud School 토이 프로젝트 · 2026</p>
+            <div class="star">
+              <p><b>과정</b> EC2에 Kubernetes 클러스터(HA Master 3 + Worker 2, 내부 NLB, Calico CNI)를 직접 구축하고, 브라우저 게임을 3-tier로 배포했습니다. Nginx Ingress로 REST·WebSocket을 라우팅하고 RDS MySQL과 연동했습니다.</p>
+              <p><b>결과</b> WebSocket 포트 분리 등 self-managed K8s의 운영 한계를 확인하고, EKS·Multi-AZ·RDS 이중화 개선안을 도출했습니다.</p>
+            </div>
+            <div class="chips chips--sm"><span>Kubernetes</span><span>EC2</span><span>Nginx Ingress</span><span>ECR</span><span>RDS</span></div>
+            <a class="project__link" href="https://github.com/gimyw/galaga-game">github.com/gimyw/galaga-game</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__body">
+            <h3>Docker Cold Start 기반 DR 검증 & imgadvisor</h3>
+            <p class="project__meta">AWS Cloud School 토이 프로젝트 · 2026</p>
+            <div class="star">
+              <p><b>문제</b> 긴급 배포 때 Docker Cold Start가 RTO 안에 끝나는지 알 수 없었습니다.</p>
+              <p><b>과정</b> 이미지 Pull·Extract·Ready 시간을 나눠 측정했습니다.</p>
+              <p><b>결과</b> 더 작은 이미지(Pull+Extract 8.7초)가 Ready에서 타임아웃 났습니다. 이미지 크기보다 앱 기동 시간이 RTO를 좌우한다는 것을 확인하고, Dockerfile 정적 분석 CLI(imgadvisor)를 만들었습니다.</p>
+            </div>
+            <div class="chips chips--sm"><span>Docker</span><span>Bash</span><span>RTO/DR</span><span>CLI</span></div>
+            <a class="project__link" href="https://github.com/gimyw/dockimage_scanner">github.com/gimyw/dockimage_scanner</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="section__inner">
+        <span class="section__eyebrow">04</span>
+        <h2 class="section__title">SkillSet</h2>
+        <div class="skills">
+          <div class="skills__group">
+            <h3>Cloud / Infra</h3>
+            <div class="chips">
+              <span>EKS</span><span>ECS Fargate</span><span>VPC</span><span>ALB</span><span>RDS</span>
+              <span>S3</span><span>CloudFront</span><span>Lambda</span><span>WAF</span><span>FIS</span>
+              <span>Terraform</span><span>Docker</span><span>Kubernetes</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h3>CI/CD</h3>
+            <div class="chips">
+              <span>GitHub Actions (OIDC)</span><span>Jenkins</span><span>ArgoCD</span>
+              <span>Argo Rollouts</span><span>Helm</span><span>GitOps</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h3>Observability / SRE</h3>
+            <div class="chips">
+              <span>CloudWatch</span><span>Prometheus / AMP</span><span>Grafana / AMG</span>
+              <span>AWS FIS</span><span>k6</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h3>Security / Etc.</h3>
+            <div class="chips">
+              <span>IAM (OIDC · IRSA)</span><span>Secrets Manager</span><span>Linux</span>
+              <span>Python</span><span>Bash</span><span>Claude Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section page-break">
+      <div class="section__inner">
+        <span class="section__eyebrow">05</span>
+        <h2 class="section__title">Certification</h2>
+        <div class="cards">
+          <div class="card"><span class="card__badge">AWS</span><strong>AWS Certified Solutions Architect – Associate</strong><span class="card__sub">Amazon Web Services</span></div>
+          <div class="card"><span class="card__badge">OS</span><strong>리눅스마스터 2급</strong><span class="card__sub">한국정보통신진흥협회(KAIT)</span></div>
+          <div class="card"><span class="card__badge">NET</span><strong>네트워크관리사 2급</strong><span class="card__sub">한국정보통신자격협회(ICQA)</span></div>
+          <div class="card"><span class="card__badge">OA</span><strong>컴퓨터활용능력 1급</strong><span class="card__sub">대한상공회의소</span></div>
+        </div>
+
+        <h3 class="sub__title">입사 후</h3>
+        <ul class="links">
+          <li>장애가 나기 전에 확인합니다: 서비스마다 복구 목표를 정하고 장애 주입 실험으로 검증합니다.</li>
+          <li>비용은 근거로 말합니다: 관측 지표에서 줄일 곳을 찾고 전후 수치를 남깁니다.</li>
+        </ul>
+
+        <h3 class="sub__title">Links</h3>
+        <ul class="links">
+          <li>GitHub — github.com/gimyw</li>
+          <li>Farmily 통합 아카이브 — github.com/gimyw/farmily-archive</li>
+          <li>기술 블로그 143편 — velog.io/@kjk77544 (AWS Cloud School 학습 일지 114 · 리눅스 서버 시리즈 9 · Farmily CI/CD·Terraform 6 등)</li>
+          <li>포트폴리오 사이트 — gimyw.github.io</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
